@@ -1,0 +1,29 @@
+
+//Creating candidates on the database
+
+LOAD CSV FROM 'file:///C:/Users/Vusumuzi/Downloads/candidates-list.csv' AS line CREATE (:Candidate {first_name: line[0], last_name: line[1],
+ gender:line[5], email: line[3],party: line[21], constituency: line[20]})
+
+ //Creating constituencies
+
+ LOAD CSV FROM 'file:///C:/Users/Vusumuzi/Downloads/result.csv' AS line CREATE (:Constituencies {costituencies: line[2]})
+
+//A discussion took place between me and John Anderson in the college library on how to use csv file in creating the database.
+
+
+References:
+
+LOAD CSV: http://neo4j.com/docs/stable/query-load-csv.html
+FROM: http://neo4j.com/docs/stable/query-load-csv.html
+AS: http://neo4j.com/docs/2.2.9/query-return.html
+CREATE: http://neo4j.com/docs/stable/query-create.html
+line[0]: http://neo4j.com/docs/stable/query-load-csv.html
+http://irish-elections.storyful.com/about - DATA SOURCE
+
+
+
+
+
+try and match candidate.constituency with the constituency.constituency 
+
+TRY MERGE or MATCH
